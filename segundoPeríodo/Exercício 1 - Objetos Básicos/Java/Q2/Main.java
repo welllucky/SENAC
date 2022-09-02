@@ -7,6 +7,7 @@ class Main{
         paoDeSal.setEndereco("17524-440", "Rua Onofre José Barbosa", "", "Jardim Aparecida Nasser", "Jardim Aparecida Nasser","SP","Brasil");
         paoDeSal.setTelefone("(14) 3773-1550");
 
+        paoDeSal.showAll();
 
     }
 }

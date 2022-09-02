@@ -58,11 +58,11 @@ class Supermercado{
     }
 
     public void showAll(){
-        System.out.println("ID: " +
-                "Nome: " +
-                "Nome Fantasia: " +
-                "CNPJ:" +
-                "Endereço: " +
-                "Telefone: ");
+        System.out.println("ID: ".concat(ID) +
+                "Nome: ".concat(nome) +
+                "Nome Fantasia: ".concat(nomeFantasia) +
+                "CNPJ:".concat(cnpj) +
+                "Endereço: ".concat(endereco) +
+                "Telefone: ".concat(telefone));
     }
 }
