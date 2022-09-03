@@ -1,5 +1,5 @@
 class Supermercado{
-
+    
     private static int ID;
     private String cnpj;
     private String nome;
@@ -7,16 +7,21 @@ class Supermercado{
     private Endereco endereco = new Endereco();
     private String telefone;
 
+    Supermercado(String cnpj){
+        this.cnpj = cnpj;
+        this.nome = "Não informado";
+        this.nomeFantasia = "Não informado";
+        this.telefone = "Não informado";
+        ID++;
+    }
+
+
     public int getId(){
         return ID;
     }
 
     public String getCnpj(){
         return cnpj;
-    }
-
-    public void setCnpj(String cnpj){
-        this.cnpj = cnpj;
     }
 
     public void setNome(String nome){
@@ -37,8 +42,46 @@ class Supermercado{
         this.endereco.pais = pais;
     }
 
-    /*public Endereco getEndereco(){
+    /*public String getEndereco(String opcao){
+        switch(opcao){
+            case "cep":
+            return endereco.cep;
+            break;
 
+            case "rua":
+            return endereco.rua;
+            break;
+
+            case "complemento":
+            return endereco.complemento;
+            break;
+
+            case "bairro":
+            return endereco.bairro;
+            break;
+
+            case "cidade":
+            return endereco.cidade;
+            break;
+
+            case "estado":
+            return endereco.estado;
+            break;
+
+            case "pais":
+            return endereco.pais;
+            break;
+
+            default:
+            return endereco.cep;
+            return endereco.rua;
+            return endereco.complemento;
+            return endereco.bairro;
+            return endereco.cidade;
+            return endereco.estado;
+            return endereco.pais;
+        }
+        
     }*/
 
     public void setTelefone(String telefone){
@@ -58,11 +101,19 @@ class Supermercado{
     }
 
     public void showAll(){
-        System.out.println("ID: ".concat(ID) +
-                "Nome: ".concat(nome) +
-                "Nome Fantasia: ".concat(nomeFantasia) +
-                "CNPJ:".concat(cnpj) +
-                "Endereço: ".concat(endereco) +
-                "Telefone: ".concat(telefone));
+        System.out.println("\nID: " + ID);
+        System.out.println("Nome: " + nome);
+        System.out.println("Nome Fantasia: " + nomeFantasia);
+        System.out.println("CNPJ: " + cnpj);
+        System.out.println("Telefone: " + telefone);
+        System.out.println("--------Endereço--------");
+        System.out.println("CEP: " + endereco.cep);
+        System.out.println("Rua: " + endereco.rua);
+        System.out.println("Complemento: " + endereco.complemento);
+        System.out.println("Bairro: " + endereco.bairro);
+        System.out.println("Cidade: " + endereco.cidade);
+        System.out.println("Estado: " + endereco.estado);
+        System.out.println("Pais: " + endereco.pais + "\n");
+                
     }
 }
