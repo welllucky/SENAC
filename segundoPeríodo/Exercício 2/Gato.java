@@ -52,10 +52,6 @@ public class Gato {
         return saude;
     }
 
-    public void setSaude(Saude saude) {
-        this.saude = saude;
-    }
-
     public String getSituacao() {
         return situacao;
     }
@@ -65,7 +61,7 @@ public class Gato {
     }
 
     public Dono getDono() {
-        return dono;   // colocar atributo de nome
+        System.out.printf("%s pertence a %s\n", this.nome, this.dono.getNome());
     }
 
     public void setDono(Dono dono) {    //setar o nome somente uma vez
@@ -80,12 +76,12 @@ public class Gato {
         this.moradia = moradia;
     }
 
-    public Ações fazendoOQue() {       
-        return fazer;   //retonar o status
+    public String fazendoOQue() {       
+        System.out.printf("%s está %s\n", this.getNome, this.situacao);
     }
 
-    public void fazer(Ações fazer) {
-        this.fazer = fazer;  
+    public void fazer() {
+        return fazer;
     }
 
     public Lugar getLugarAtual() {

@@ -1,6 +1,5 @@
 public class Ações {
     private static int id;
-    private Gato gato;
     Ações(){
         id ++;
     }
@@ -20,14 +19,19 @@ public class Ações {
     }
 
     void brigar(Gato adversário){
-        gato.setSituacao("Brigando");
-        System.out.printf("%s bateu em %s e ****", this.gato.getNome(), adversário);
+        if (this.getLugarAtual() == adversário.getLugarAtual()){
+             this.setSituacao("Brigando");
+             System.out.printf("%s bateu em %s e %s perdeu 1 vida, ficando somente com %i\n", this.getNome(), adversário.getNome(), adversário.getNome(), adversário.getSaude().getVida());
+             this.getSaude().perderVida();
+        } else {
+            System.out.printf("%s está muito longe de %s, assim não consegue brigar.\n", this.getNome(), adversário.getNome());
+        }
     }
 
     void necessidades(int tipo, Lugar lugar){
         if (tipo == 1){
             gato.setSituacao("Fazendo xixi");
-            System.out.printf("%s está fazendo xixi na(o) %s", this.gato.getNome(), this.gato.getLugarAtual());
+            System.out.printf("%s está fazendo xixi na(o) %s\n", this.gato.getNome(), this.gato.getLugarAtual());
         } else if (tipo == 0){
             gato.setSituacao("Fazendo cocô");
             System.out.printf("%s está fazendo cocô", this.gato.getNome());

@@ -22,6 +22,12 @@ public class Rua extends Lugar{
     public void mudarClima(String clima) {
         this.clima = clima;
     }
+    public void setNome(String nome){
+        this.nome = nome;
+    }
+    public String getNome(){
+        return nome;
+    }
 
    
 
